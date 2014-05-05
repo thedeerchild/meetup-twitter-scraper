@@ -16,7 +16,7 @@ agent.history_added = Proc.new {sleep 1}
 puts "Started scraping #{group_name}"
 html = agent.get base_url
 last_offset = html.at('.nav-next').get_attribute('href').match(/offset=(\d+)&/)[1]
-total_pages = last_offset.to_i/20
+total_pages = last_offset.to_i/20 + 1
 puts "Expecting #{total_pages} pages of users"
 
 File.open(filename, 'w') do |f|  
