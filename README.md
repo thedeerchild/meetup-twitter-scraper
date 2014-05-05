@@ -1,4 +1,4 @@
-#Meetup Twitter Scraper
+#Meetup-Twitter-Scraper
 
 A simple scraper for getting the Twitter handles of everybody in a Meetup.com group page.
 
