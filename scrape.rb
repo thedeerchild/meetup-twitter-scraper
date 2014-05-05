@@ -5,7 +5,7 @@ unless ARGV.length == 2
   exit
 end
 
-base_url = ARGV[0]
+base_url = ARGV[0].strip.match(/(.*\/members)/)[1]
 filename = ARGV[1]
 group_name = base_url.match(/.com\/(.+)\/members/)[1]
 
