@@ -30,7 +30,10 @@ File.open(filename, 'w') do |f|
       print '.'
       html = agent.get mem_url
       twitter = agent.page.at('.badge-twitter-24')
-      f.puts twitter.get_attribute('href').strip.match(/\.com\/(?:#!\/)?([^\/]+)\/?$/)[1] if twitter
+      begin
+        f.puts twitter.get_attribute('href').strip.match(/\.com\/(?:#!\/)?([^\/]+)\/?$/)[1] if twitter
+      rescue
+      end
     end
     print "\n"
   end
