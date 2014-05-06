@@ -21,7 +21,7 @@ puts "Expecting #{total_pages} pages of users"
 
 File.open(filename, 'w') do |f|  
   (0..last_offset.to_i).step(20) do |offset|
-    url = base_url + "?offset=#{offset}"
+    url = base_url + "/?offset=#{offset}"
     html = agent.get(url)
     mems = html.search('.memName').map { |e| e.get_attribute('href') }
     puts "Scraping page #{offset/20+1} of #{total_pages}"
